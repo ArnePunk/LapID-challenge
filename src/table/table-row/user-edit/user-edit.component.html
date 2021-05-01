@@ -1,0 +1,10 @@
+<div *ngIf="user" class="user-edit-area">
+    <div class="name-area">
+        <input type="text" [value]="user.firstname" />
+        <input type="text" [value]="user.lastname" />
+    </div>
+    <div class="login-area">
+        <input type="text" [value]="user.login" />
+        <input type="password" [value]="user.password" />
+    </div>
+</div>
