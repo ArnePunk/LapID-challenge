@@ -8,8 +8,13 @@ import { User } from 'src/interfaces/user'
 })
 export class UserEditComponent implements OnInit {
     @Input() user?: User
+    editable?: boolean = false
 
     constructor() {}
 
     ngOnInit() {}
+
+    changeEditable() {
+        this.editable = !this.editable
+    }
 }

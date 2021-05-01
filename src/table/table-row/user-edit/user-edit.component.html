@@ -1,10 +1,49 @@
-<div *ngIf="user" class="user-edit-area">
-    <div class="name-area">
-        <input type="text" [value]="user.firstname" />
-        <input type="text" [value]="user.lastname" />
+<div *ngIf="user">
+    <div class="row justify-content-center m-2">
+        <input
+            class="col-sm-5 form-control mr-2"
+            type="text"
+            [value]="user.firstname"
+            [disabled]="!this.editable"
+        />
+        <input
+            class="col-sm-5 form-control"
+            type="text"
+            [value]="user.lastname"
+            [disabled]="!this.editable"
+        />
     </div>
-    <div class="login-area">
-        <input type="text" [value]="user.login" />
-        <input type="password" [value]="user.password" />
+    <div class="row justify-content-center m-2">
+        <input
+            class="col-sm-5 form-control mr-2"
+            type="text"
+            [value]="user.login"
+            [disabled]="!this.editable"
+        />
+        <input
+            class="col-sm-5 form-control"
+            type="password"
+            [value]="user.password"
+            [disabled]="!this.editable"
+        />
+    </div>
+    <div class="row justify-content-center m-2">
+        <div class="col-sm-2 custom-control custom-switch text-right">
+            <input
+                type="checkbox"
+                class="custom-control-input"
+                [id]="'switch' + user.id"
+                (change)="changeEditable()"
+            />
+            <label class="custom-control-label" [for]="'switch' + user.id"
+                >Editable</label
+            >
+        </div>
+        <div class="col-sm-2 text-center">
+            <button class="btn btn-outline-danger">Delete</button>
+        </div>
+        <div class="col-sm-2 text-left">
+            <button class="btn btn-outline-success">Apply</button>
+        </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { User } from 'src/interfaces/user'
 
 @Component({
@@ -8,8 +8,14 @@ import { User } from 'src/interfaces/user'
 })
 export class UserEntryComponent implements OnInit {
     @Input() user?: User
+    @Input() showEdit?: boolean
+    @Output() notify = new EventEmitter()
 
     constructor() {}
 
     ngOnInit() {}
+
+    triggerParentToggleShowEdit() {
+        this.notify.emit()
+    }
 }

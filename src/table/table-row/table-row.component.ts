@@ -8,8 +8,13 @@ import { User } from 'src/interfaces/user'
 })
 export class TableRowComponent implements OnInit {
     @Input() user?: User
+    showEdit?: boolean = false
 
     constructor() {}
 
     ngOnInit() {}
+
+    toggleShowEdit() {
+        this.showEdit = !this.showEdit
+    }
 }
