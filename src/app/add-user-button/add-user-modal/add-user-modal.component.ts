@@ -1,0 +1,21 @@
+import { Component, Output, OnInit, EventEmitter } from '@angular/core'
+
+@Component({
+    selector: 'app-add-user-modal',
+    templateUrl: './add-user-modal.component.html',
+    styleUrls: ['./add-user-modal.component.scss'],
+})
+export class AddUserModalComponent implements OnInit {
+    @Output() notify = new EventEmitter()
+    constructor() {}
+
+    ngOnInit() {}
+
+    triggerCloseModal() {
+        this.notify.emit()
+    }
+
+    submitUser() {
+        this.triggerCloseModal()
+    }
+}

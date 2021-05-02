@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-end mt-3 sticky-bottom">
+    <button (click)="toggleModal()" class="btn btn-success rounded-circle">
+        +
+    </button>
+
+    <app-add-user-modal
+        *ngIf="modalOpen"
+        (notify)="toggleModal()"
+    ></app-add-user-modal>
+</div>
