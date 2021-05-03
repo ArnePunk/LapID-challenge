@@ -3,13 +3,13 @@
         <input
             class="col-sm-5 form-control mr-2"
             type="text"
-            [value]="user.firstname"
+            [(ngModel)]="firstname"
             [disabled]="!this.editable"
         />
         <input
             class="col-sm-5 form-control"
             type="text"
-            [value]="user.lastname"
+            [(ngModel)]="lastname"
             [disabled]="!this.editable"
         />
     </div>
@@ -17,13 +17,13 @@
         <input
             class="col-sm-5 form-control mr-2"
             type="text"
-            [value]="user.login"
+            [(ngModel)]="username"
             [disabled]="!this.editable"
         />
         <input
             class="col-sm-5 form-control"
             type="password"
-            [value]="user.password"
+            [(ngModel)]="password"
             [disabled]="!this.editable"
         />
     </div>
@@ -40,10 +40,14 @@
             >
         </div>
         <div class="col-sm-2 text-center">
-            <button class="btn btn-outline-danger">Delete</button>
+            <button class="btn btn-outline-danger" (click)="deleteUser()">
+                Delete
+            </button>
         </div>
         <div class="col-sm-2 text-left">
-            <button class="btn btn-outline-success">Apply</button>
+            <button class="btn btn-outline-success" (click)="editUser()">
+                Apply
+            </button>
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -10,6 +11,10 @@ import { UserEntryComponent } from 'src/table/table-row/user-entry/user-entry.co
 import { TableHeadComponent } from 'src/table/table-head/table-head.component'
 import { AddUserButtonComponent } from 'src/table/add-user-button/add-user-button.component'
 import { AddUserModalComponent } from 'src/table/add-user-button/add-user-modal/add-user-modal.component'
+import { EditDeleteUserService } from 'src/services/edit-delete-user.service'
+import { GetAllUsersService } from 'src/services/get-all-users.service'
+import { AddNewUserService } from 'src/services/add-new-user.service'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
     declarations: [
@@ -22,8 +27,8 @@ import { AddUserModalComponent } from 'src/table/add-user-button/add-user-modal/
         UserEntryComponent,
         TableHeadComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule],
-    providers: [],
+    imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+    providers: [EditDeleteUserService, GetAllUsersService, AddNewUserService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
