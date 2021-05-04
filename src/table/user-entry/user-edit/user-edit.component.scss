@@ -10,3 +10,8 @@ p {
 label {
     color: gray;
 }
+
+.password-btn:focus {
+    outline: 0;
+    box-shadow: none;
+}

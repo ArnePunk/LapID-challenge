@@ -15,6 +15,7 @@ export class UserEditComponent implements OnInit, OnChanges {
     username: string = ''
     firstname: string = ''
     lastname: string = ''
+    showPassword: boolean = false
 
     constructor(
         private editDeleteService: EditDeleteUserService,
@@ -61,5 +62,9 @@ export class UserEditComponent implements OnInit, OnChanges {
 
     changeEditable() {
         this.editable = !this.editable
+    }
+
+    toggleShowPassword() {
+        this.showPassword = !this.showPassword
     }
 }

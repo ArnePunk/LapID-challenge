@@ -1,5 +1,4 @@
-import { Component, Output, OnInit, EventEmitter, Input } from '@angular/core'
-import { User } from 'src/interfaces/user'
+import { Component, Output, OnInit, EventEmitter } from '@angular/core'
 import { AddNewUserService } from 'src/services/add-new-user.service'
 import { TriggerRefetchUsersService } from 'src/services/trigger-refetch-users.service'
 
@@ -14,6 +13,7 @@ export class AddUserModalComponent implements OnInit {
     username: string = ''
     firstname: string = ''
     lastname: string = ''
+    showPassword: boolean = false
 
     constructor(
         private addUserService: AddNewUserService,
@@ -39,5 +39,9 @@ export class AddUserModalComponent implements OnInit {
                 this.triggerRefetchUsersService.triggerUserRefetch()
             })
         this.triggerCloseModal()
+    }
+
+    toggleShowPassword() {
+        this.showPassword = !this.showPassword
     }
 }

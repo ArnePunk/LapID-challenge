@@ -38,3 +38,21 @@ input {
     flex-direction: column;
     align-items: center;
 }
+
+#password {
+    width: 15.5vw;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#password-btn {
+    text-align: center;
+    width: 2.5vw;
+    background-color: lightgrey;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+}
