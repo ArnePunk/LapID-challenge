@@ -17,23 +17,9 @@
     {
       "id": 3,
       "password": "1234",
-      "login": "joerg123",
-      "firstname": "Jörg",
-      "lastname": "Nobiling"
-    },
-    {
-      "id": 4,
-      "password": "1245",
       "login": "krepskevin",
       "firstname": "Kevin",
       "lastname": "Kreps"
-    },
-    {
-      "id": 5,
-      "password": "asdf",
-      "login": "asdf",
-      "firstname": "dsfg",
-      "lastname": "asdf"
     }
   ]
 }

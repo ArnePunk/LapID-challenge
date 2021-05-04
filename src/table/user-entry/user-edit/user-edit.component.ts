@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core'
 import { User } from 'src/interfaces/user'
 import { EditDeleteUserService } from 'src/services/edit-delete-user.service'
+import { TriggerRefetchUsersService } from 'src/services/trigger-refetch-users.service'
 
 @Component({
     selector: 'app-user-edit',
@@ -15,7 +16,10 @@ export class UserEditComponent implements OnInit, OnChanges {
     firstname: string = ''
     lastname: string = ''
 
-    constructor(private editDeleteService: EditDeleteUserService) {}
+    constructor(
+        private editDeleteService: EditDeleteUserService,
+        private triggerRefetchUsersService: TriggerRefetchUsersService
+    ) {}
 
     ngOnInit() {}
 
@@ -42,7 +46,7 @@ export class UserEditComponent implements OnInit, OnChanges {
                     this.user.id
                 )
                 .subscribe(() => {
-                    location.reload()
+                    this.triggerRefetchUsersService.triggerUserRefetch()
                 })
         }
     }
@@ -50,7 +54,7 @@ export class UserEditComponent implements OnInit, OnChanges {
     deleteUser() {
         if (this.user) {
             this.editDeleteService.deleteUser(this.user.id).subscribe(() => {
-                location.reload()
+                this.triggerRefetchUsersService.triggerUserRefetch()
             })
         }
     }

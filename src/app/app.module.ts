@@ -14,6 +14,7 @@ import { EditDeleteUserService } from 'src/services/edit-delete-user.service'
 import { GetAllUsersService } from 'src/services/get-all-users.service'
 import { AddNewUserService } from 'src/services/add-new-user.service'
 import { FormsModule } from '@angular/forms'
+import { TriggerRefetchUsersService } from 'src/services/trigger-refetch-users.service'
 
 @NgModule({
     declarations: [
@@ -26,7 +27,12 @@ import { FormsModule } from '@angular/forms'
         TableHeadComponent,
     ],
     imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
-    providers: [EditDeleteUserService, GetAllUsersService, AddNewUserService],
+    providers: [
+        EditDeleteUserService,
+        GetAllUsersService,
+        AddNewUserService,
+        TriggerRefetchUsersService,
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

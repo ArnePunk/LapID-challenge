@@ -1,6 +1,7 @@
 import { Component, Output, OnInit, EventEmitter, Input } from '@angular/core'
 import { User } from 'src/interfaces/user'
 import { AddNewUserService } from 'src/services/add-new-user.service'
+import { TriggerRefetchUsersService } from 'src/services/trigger-refetch-users.service'
 
 @Component({
     selector: 'app-add-user-modal',
@@ -14,7 +15,10 @@ export class AddUserModalComponent implements OnInit {
     firstname: string = ''
     lastname: string = ''
 
-    constructor(private addUserService: AddNewUserService) {}
+    constructor(
+        private addUserService: AddNewUserService,
+        private triggerRefetchUsersService: TriggerRefetchUsersService
+    ) {}
 
     ngOnInit() {}
 
@@ -32,7 +36,7 @@ export class AddUserModalComponent implements OnInit {
                 lastname: this.lastname,
             })
             .subscribe(() => {
-                location.reload()
+                this.triggerRefetchUsersService.triggerUserRefetch()
             })
         this.triggerCloseModal()
     }
