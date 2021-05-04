@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core'
-import { userInfo } from 'node:os'
 import { User } from 'src/interfaces/user'
 import { EditDeleteUserService } from 'src/services/edit-delete-user.service'
 

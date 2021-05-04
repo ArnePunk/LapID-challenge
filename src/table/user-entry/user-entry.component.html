@@ -1,10 +1,13 @@
 <div *ngIf="user" class="row p-2 user-entry">
     <div class="col-sm-3 left-column">{{ user.id }}</div>
-    <div class="col-sm-6 mid-column">{{ user.login }}</div>
-    <div class="col-sm-3 right-column text-center">
+    <div class="col-sm-7 mid-column">
+        <div>{{ user.login }}</div>
+        <app-user-edit *ngIf="showEdit" [user]="user"></app-user-edit>
+    </div>
+    <div class="col-sm-2 right-column text-center">
         <button
             class="rounded-circle btn btn-outline-secondary toggle-show-edit"
-            (click)="triggerParentToggleShowEdit()"
+            (click)="toggleShowEdit()"
         >
             <i [class]="showEdit ? 'arrow down' : 'arrow left'"></i>
         </button>

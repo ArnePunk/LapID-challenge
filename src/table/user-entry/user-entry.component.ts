@@ -8,14 +8,13 @@ import { User } from 'src/interfaces/user'
 })
 export class UserEntryComponent implements OnInit {
     @Input() user?: User
-    @Input() showEdit?: boolean
-    @Output() notify = new EventEmitter()
+    showEdit?: boolean
 
     constructor() {}
 
     ngOnInit() {}
 
-    triggerParentToggleShowEdit() {
-        this.notify.emit()
+    toggleShowEdit() {
+        this.showEdit = !this.showEdit
     }
 }

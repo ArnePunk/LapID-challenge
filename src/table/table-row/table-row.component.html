@@ -1,8 +1,0 @@
-<div *ngIf="user">
-    <app-user-entry
-        [user]="user"
-        [showEdit]="showEdit"
-        (notify)="toggleShowEdit()"
-    ></app-user-entry>
-    <app-user-edit *ngIf="showEdit" [user]="user"></app-user-edit>
-</div>
