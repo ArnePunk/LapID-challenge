@@ -1,3 +1,4 @@
+// bootstrap modal not working (bootstrap js + angular problem??) so manually implemented modal was chosen
 .modal-wrapper {
     position: fixed;
     background-color: rgba(75, 75, 75, 0.6);
@@ -7,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 1100;
+    z-index: 1;
     top: 0;
     left: 0;
 }

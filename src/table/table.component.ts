@@ -17,13 +17,14 @@ export class TableComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.fetchUsers()
+        // listen to the refetch-event-emitting observable and fetch users as callback
         this.triggerRefetchUsersService
             .userRefetchEventEmitter()
             .subscribe(() => this.fetchUsers())
     }
 
     fetchUsers() {
+        // store users fetched by GetAllUsersService in local state
         this.getUsersService.getUsers().subscribe((data: User[]) => {
             this.user_data = data
         })

@@ -13,13 +13,6 @@
       "lastname": "Mustermann",
       "login": "erika_mustermann",
       "password": "Test"
-    },
-    {
-      "id": 3,
-      "password": "1234",
-      "login": "krepskevin",
-      "firstname": "Kevin",
-      "lastname": "Kreps"
     }
   ]
 }

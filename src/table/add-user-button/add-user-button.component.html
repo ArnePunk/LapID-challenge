@@ -2,7 +2,7 @@
     <button (click)="toggleModal()" class="btn btn-success rounded-circle">
         +
     </button>
-
+    <!-- register toggleModal()-Callback for "notify"-Output (on modal cancel/submit data) -->
     <app-add-user-modal
         *ngIf="modalOpen"
         (notify)="toggleModal()"

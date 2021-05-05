@@ -25,6 +25,7 @@ export class UserEditComponent implements OnInit, OnChanges {
     ngOnInit() {}
 
     ngOnChanges() {
+        //catch this.user == undefined case, as soon as it's defined, apply user data to input bound variables (via ngModel)
         if (this.user && !this.username) {
             this.password = this.user.password
             this.username = this.user.login
@@ -38,7 +39,7 @@ export class UserEditComponent implements OnInit, OnChanges {
             this.editDeleteService
                 .editUser(
                     {
-                        id: this.user.id,
+                        id: this.user.id, //no input for id, so no effects here
                         password: this.password,
                         login: this.username,
                         firstname: this.firstname,
@@ -47,6 +48,7 @@ export class UserEditComponent implements OnInit, OnChanges {
                     this.user.id
                 )
                 .subscribe(() => {
+                    //user refetch in table on data change
                     this.triggerRefetchUsersService.triggerUserRefetch()
                 })
         }
@@ -55,6 +57,7 @@ export class UserEditComponent implements OnInit, OnChanges {
     deleteUser() {
         if (this.user) {
             this.editDeleteService.deleteUser(this.user.id).subscribe(() => {
+                //user refetch in table on data change
                 this.triggerRefetchUsersService.triggerUserRefetch()
             })
         }

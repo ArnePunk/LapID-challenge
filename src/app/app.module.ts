@@ -28,10 +28,10 @@ import { TriggerRefetchUsersService } from 'src/services/trigger-refetch-users.s
     ],
     imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
     providers: [
-        EditDeleteUserService,
-        GetAllUsersService,
-        AddNewUserService,
-        TriggerRefetchUsersService,
+        EditDeleteUserService, //service for editing and deleting users, injected into \src\table\user-entry\user-edit\user-edit.component.ts
+        GetAllUsersService, //service for fetching all users, injected into \src\table\table.component.ts
+        AddNewUserService, //service for adding new users, injected into \src\table\add-user-button\add-user-modal\add-user-modal.component.ts
+        TriggerRefetchUsersService, //service for triggering user refetch in \src\table\table.component.ts from \src\table\user-entry\user-edit\user-edit.component.ts and \src\table\add-user-button\add-user-modal\add-user-modal.component.ts
     ],
     bootstrap: [AppComponent],
 })

@@ -1,5 +1,6 @@
 <div class="container user-table">
     <app-table-head></app-table-head>
+    <!-- Every user representing one user-entry in the table -->
     <div *ngFor="let user of user_data">
         <app-user-entry [user]="user"></app-user-entry>
     </div>
